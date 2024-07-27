@@ -6,9 +6,6 @@ function Book(title,author,pages,finished)
     this.author=author;
     this.pages=pages;
     this.finished=finished;
-    // this.info=function(){
-    //     return this.title + " by " + this.author + ", " + this.pages + " pages, " + this.readStatus;
-    // }
 }
 function addBookToLibrary()
 {
@@ -28,12 +25,11 @@ function addBookToLibrary()
     });
 }
 
-const book1= new Book("The Hobbit","Tolkien","768","Not Read");
-const book2=new Book("Harry Potter","J.K Rowling","325","Read");
+const book1= new Book("The Stormlight Archive: Way of the kings","Tolkien","768","Yes");
+const book2=new Book("Harry Potter","J.K Rowling","325","No");
 myLibrary.push(book1);
 myLibrary.push(book2);
-myLibrary.push(book1);
-myLibrary.push(book2);
+
 console.log(myLibrary);
 
 const bookDisplay=document.querySelector(".book-display");

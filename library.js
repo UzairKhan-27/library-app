@@ -24,13 +24,40 @@ function addBookToLibrary()
         bookDisplay.appendChild(para);
     });
 }
-
+// function addBookToLibrary()
 const book1= new Book("The Stormlight Archive: Way of the kings","Tolkien","768","Yes");
 const book2=new Book("Harry Potter","J.K Rowling","325","No");
 myLibrary.push(book1);
 myLibrary.push(book2);
 
-console.log(myLibrary);
-
 const bookDisplay=document.querySelector(".book-display");
-addBookToLibrary();
+// addBookToLibrary();
+// function fillForm()
+// {
+//     let title=prompt("Title: ");
+//     let author=prompt("Author: ");
+//     let pages=prompt("Pages: ");
+//     let finished=prompt("Have You Read The Book Or Not?");
+//     const book=new Book(title,author,pages,finished);
+//     myLibrary.push(book);
+//     addBookToLibrary();
+// }
+
+const addBook=document.querySelector(".add-book button");
+const submitButton=document.querySelector("#submit");
+const form=document.querySelector("dialog");
+
+addBook.addEventListener("click",event =>{
+    form.showModal();
+});
+submitButton.addEventListener("click",event => {
+    let title=document.getElementById("title").value;
+    let pages=document.getElementById("pages").value;
+    let author=document.getElementById("author").value;
+    let read=document.getElementById("read").value
+    console.log(title);
+    console.log(author);
+    console.log(pages);
+    console.log(read);
+    form.close();
+});

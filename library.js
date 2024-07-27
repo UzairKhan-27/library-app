@@ -1,11 +1,11 @@
 const myLibrary=[];
 
-function Book(title,author,pages,finished)
+function Book(title,author,pages,read)
 {
     this.title=title;
     this.author=author;
     this.pages=pages;
-    this.finished=finished;
+    this.read=read;
 }
 function addBookToLibrary()
 {
@@ -18,30 +18,23 @@ function addBookToLibrary()
             const capitalizedKey =
                 key.charAt(0).toUpperCase()
                 + key.slice(1)
-            property.textContent= `${capitalizedKey} : ${obj[key]}`;
+            if(capitalizedKey==="Read")
+            {
+                let status= (obj[key]===false) ? "No" : "Yes";
+                property.textContent= `${capitalizedKey} : ${status}`;
+            }
+            else
+                property.textContent= `${capitalizedKey} : ${obj[key]}`;
+            
             para.appendChild(property);
         }
         bookDisplay.appendChild(para);
     });
 }
-// function addBookToLibrary()
-const book1= new Book("The Stormlight Archive: Way of the kings","Tolkien","768","Yes");
-const book2=new Book("Harry Potter","J.K Rowling","325","No");
-myLibrary.push(book1);
-myLibrary.push(book2);
+
 
 const bookDisplay=document.querySelector(".book-display");
-// addBookToLibrary();
-// function fillForm()
-// {
-//     let title=prompt("Title: ");
-//     let author=prompt("Author: ");
-//     let pages=prompt("Pages: ");
-//     let finished=prompt("Have You Read The Book Or Not?");
-//     const book=new Book(title,author,pages,finished);
-//     myLibrary.push(book);
-//     addBookToLibrary();
-// }
+
 
 const addBook=document.querySelector(".add-book button");
 const submitButton=document.querySelector("#submit");
@@ -54,10 +47,14 @@ submitButton.addEventListener("click",event => {
     let title=document.getElementById("title").value;
     let pages=document.getElementById("pages").value;
     let author=document.getElementById("author").value;
-    let read=document.getElementById("read").value
+    let read=document.getElementById("read").checked;
     console.log(title);
     console.log(author);
     console.log(pages);
     console.log(read);
+    const book=new Book(title,author,pages,read);
+    myLibrary.push(book);
+    addBookToLibrary();
+    myLibrary.pop();
     form.close();
 });

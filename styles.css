@@ -1,12 +1,27 @@
+html
+{
+    font-size: 16px;
+}
 .book-display
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+h1
+{
+    text-align: center;
 }
 p
 {
+    display: flex;
+    flex-direction: column;
     width: 250px;
-    height: 250px;
+    height: 300px;
     background-color: aqua;
-
+    justify-content: center;
+    font-size: 1.3rem;
+    gap: 1rem;
+    padding-left: 1rem;
 }

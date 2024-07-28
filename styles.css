@@ -35,3 +35,8 @@ form
 {
     align-self: flex-start;
 }
+button.delete
+{
+    width: -moz-fit-content;
+    width: fit-content;
+}

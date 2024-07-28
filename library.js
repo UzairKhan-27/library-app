@@ -1,5 +1,10 @@
 const myLibrary=[];
 
+const bookDisplay=document.querySelector(".book-display");
+const addBook=document.querySelector(".add-book button");
+const submitButton=document.querySelector("#submit");
+const form=document.querySelector("dialog");
+
 function Book(title,author,pages,read)
 {
     this.title=title;
@@ -7,6 +12,7 @@ function Book(title,author,pages,read)
     this.pages=pages;
     this.read=read;
 }
+
 function addBookToLibrary()
 {
         let para=document.createElement("p");
@@ -51,11 +57,6 @@ function addBookToLibrary()
         });
 
 }
-
-const bookDisplay=document.querySelector(".book-display");
-const addBook=document.querySelector(".add-book button");
-const submitButton=document.querySelector("#submit");
-const form=document.querySelector("dialog");
 
 addBook.addEventListener("click",event =>{
     form.showModal();

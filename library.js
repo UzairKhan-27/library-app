@@ -36,6 +36,12 @@ function addBookToLibrary()
         para.appendChild(deleteButton);
         bookDisplay.appendChild(para);
 
+        deleteButton.addEventListener("click",event=>
+        {
+            myLibrary.splice(event.target.id,1);
+            para.remove();
+        });
+
 }
 
 function deleteBook()

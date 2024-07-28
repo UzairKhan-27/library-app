@@ -2,17 +2,39 @@ html
 {
     font-size: 16px;
 }
-
+body
+{
+    background-color: #27272a;
+}
+h1
+{
+    background-color: #27272a;
+    color: #e4e4e7;
+}
 .book-display
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     justify-items: center;
+    background-color: #71717a;
 }
 h1,.add-book
 {
     text-align: center;
+    background-color: #27272a;
+    color: #e4e4e7;
+}
+.add-book button
+{
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    margin: 3rem 0;
+}
+.add-book button:hover
+{
+    transform: scale(1.2);
 }
 p
 {
@@ -20,7 +42,7 @@ p
     flex-direction: column;
     width: 250px;
     height: 300px;
-    background-color: aqua;
+    background-color: #f4f4f5;
     justify-content: center;
     font-size: 1.3rem;
     gap: 1rem;
@@ -30,6 +52,26 @@ form
 {
     display: flex;
     flex-direction: column;
+}
+dialog
+{
+    background-color: #27272a;
+    transform: scale(2);
+    color: #e4e4e7;
+    border-radius: 10px;
+    border: solid 5px white;
+}
+button#submit
+{
+    background-color: #e4e4e7;
+}
+button.delete
+{
+    color: white;
+    font-weight: bolder;
+    background-color: #71717a;
+    font-size: 1rem;
+    padding: 10px;
 }
 #read
 {

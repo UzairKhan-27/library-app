@@ -21,8 +21,16 @@ function addBookToLibrary()
                 + key.slice(1)
             if(capitalizedKey==="Read")
             {
-                let status= (obj[key]===false) ? "No" : "Yes";
-                property.textContent= `${capitalizedKey} : ${status}`;
+                let readCheckbox=document.createElement("input");
+                readCheckbox.setAttribute("type","checkbox");
+                readCheckbox.checked=(obj[key]===false) ? false:true;
+                console.log(readCheckbox.value);
+                property.textContent= `${capitalizedKey} `;
+                property.appendChild(readCheckbox);
+                readCheckbox.addEventListener("click",event=>{
+                    obj["read"]=!obj["read"];
+                    console.log(myLibrary);
+                });
             }
             else
                 property.textContent= `${capitalizedKey} : ${obj[key]}`;
@@ -44,15 +52,7 @@ function addBookToLibrary()
 
 }
 
-function deleteBook()
-{
-
-}
-
-
 const bookDisplay=document.querySelector(".book-display");
-
-
 const addBook=document.querySelector(".add-book button");
 const submitButton=document.querySelector("#submit");
 const form=document.querySelector("dialog");
@@ -73,6 +73,5 @@ submitButton.addEventListener("click",event => {
     const book=new Book(title,author,pages,read);
     myLibrary.push(book);
     addBookToLibrary();
-    // myLibrary.pop();
     form.close();
 });

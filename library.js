@@ -9,8 +9,9 @@ function Book(title,author,pages,read)
 }
 function addBookToLibrary()
 {
-    myLibrary.forEach(obj => {
         let para=document.createElement("p");
+        console.log(myLibrary);
+        let obj=myLibrary[myLibrary.length-1];
         for(let key in obj)
         {
             let property=document.createElement("div");
@@ -29,7 +30,7 @@ function addBookToLibrary()
             para.appendChild(property);
         }
         bookDisplay.appendChild(para);
-    });
+
 }
 
 
@@ -55,6 +56,6 @@ submitButton.addEventListener("click",event => {
     const book=new Book(title,author,pages,read);
     myLibrary.push(book);
     addBookToLibrary();
-    myLibrary.pop();
+    // myLibrary.pop();
     form.close();
 });

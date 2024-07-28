@@ -29,7 +29,17 @@ function addBookToLibrary()
             
             para.appendChild(property);
         }
+        const deleteButton=document.createElement("button");
+        deleteButton.classList.add("delete");
+        deleteButton.setAttribute("id",myLibrary.length-1);
+        deleteButton.textContent="Delete";
+        para.appendChild(deleteButton);
         bookDisplay.appendChild(para);
+
+}
+
+function deleteBook()
+{
 
 }
 
@@ -44,6 +54,7 @@ const form=document.querySelector("dialog");
 addBook.addEventListener("click",event =>{
     form.showModal();
 });
+
 submitButton.addEventListener("click",event => {
     let title=document.getElementById("title").value;
     let pages=document.getElementById("pages").value;
